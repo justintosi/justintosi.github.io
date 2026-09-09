@@ -74,7 +74,7 @@ h1{
   font-size:.875rem;
   display:flex;
   flex-wrap:wrap;
-  gap:.45rem 1.1rem;
+  gap:.45rem .55rem;
 }
 .profile-links a{text-underline-offset:.2em}
 
@@ -83,17 +83,11 @@ h1{
 .profile-links a + a::before{
   content:"\00B7";
   color:var(--rule);
-  margin-right:1.1rem;
+  margin-right:.55rem;
   text-decoration:none;
   display:inline-block;
 }
 
-.contact-email{
-  font-family:var(--sans);
-  font-size:.875rem;
-  margin:.65rem 0 0;
-}
-.contact-email a{text-underline-offset:.2em}
 
 .colophon{margin:0}
 
