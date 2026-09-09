@@ -59,6 +59,44 @@ h1{
   filter:saturate(.92);
 }
 
+.contact{margin-top:2rem;max-width:34em}
+.contact::before{
+  content:"";
+  display:block;
+  width:3.5rem;
+  height:1px;
+  background:var(--rule);
+  margin-bottom:1.1rem;
+}
+
+.profile-links{
+  font-family:var(--sans);
+  font-size:.875rem;
+  display:flex;
+  flex-wrap:wrap;
+  gap:.45rem 1.1rem;
+}
+.profile-links a{text-underline-offset:.2em}
+
+/* Middot between the profile links. Sits in the flex gap, so it disappears
+   automatically if the row ever wraps to one item per line. */
+.profile-links a + a::before{
+  content:"\00B7";
+  color:var(--rule);
+  margin-right:1.1rem;
+  text-decoration:none;
+  display:inline-block;
+}
+
+.contact-email{
+  font-family:var(--sans);
+  font-size:.875rem;
+  margin:.65rem 0 0;
+}
+.contact-email a{text-underline-offset:.2em}
+
+.colophon{margin:0}
+
 /* ---------- contact strip ---------- */
 
 .strip{
