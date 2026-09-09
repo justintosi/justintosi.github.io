@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Justin Tosi</title>
+<meta name="description" content="Justin Tosi is a philosopher at the McDonough School of Business at Georgetown University. He writes about social, political, legal, and moral philosophy.">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Justin Tosi">
+<meta property="og:description" content="Philosopher at the McDonough School of Business, Georgetown University. Books and papers on the ethics of public discourse, social morality, and special obligations.">
+<meta property="og:url" content="https://www.justintosi.com/">
+<meta property="og:image" content="https://www.justintosi.com/images/headshot.jpg">
+<meta name="twitter:card" content="summary">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --paper:#f7f6f2;
+  --ink:#16202b;
+  --ink-soft:#5a6570;
+  --rule:#dcd8ce;
+  --accent:#7c2b2b;
+  --serif:"Newsreader",Georgia,serif;
+  --sans:"IBM Plex Sans",system-ui,sans-serif;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--serif);
+  font-size:1.0625rem;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+
+.page{
+  max-width:52rem;
+  margin:0 auto;
+  padding:3.5rem 1.75rem 6rem;
+}
+
+a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--rule);text-decoration-thickness:1px;text-underline-offset:.18em}
+a:hover{color:var(--accent);text-decoration-color:var(--accent)}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+
+/* ---------- masthead ---------- */
+
+.masthead{
+  display:grid;
+  grid-template-columns:1fr 11rem;
+  gap:2.75rem;
+  align-items:start;
+  margin-bottom:3.25rem;
+}
+
+h1{
+  font-family:var(--serif);
+  font-weight:300;
+  font-size:clamp(2.6rem,7vw,3.9rem);
+  line-height:1;
+  letter-spacing:-0.015em;
+  margin:0 0 1.5rem;
+}
+
+.intro p{margin:0 0 1rem;max-width:34em}
+.intro p:last-child{margin-bottom:0}
+
+.portrait{
+  width:100%;
+  height:auto;
+  display:block;
+  filter:saturate(.92);
+}
+
+/* ---------- contact strip ---------- */
+
+.strip{
+  font-family:var(--sans);
+  font-size:.875rem;
+  display:flex;
+  flex-wrap:wrap;
+  gap:.45rem 1.5rem;
+  padding:1rem 0;
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+  margin-bottom:3.5rem;
+}
+.strip a{text-underline-offset:.2em}
+
+/* ---------- sections ---------- */
+
+section{margin-bottom:3.5rem}
+
+h2{
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:1.375rem;
+  letter-spacing:.005em;
+  margin:0 0 1.5rem;
+  padding-bottom:.5rem;
+  border-bottom:1px solid var(--rule);
+}
+
+/* ---------- books ---------- */
+
+.book{
+  display:grid;
+  grid-template-columns:8.5rem 1fr;
+  gap:2rem;
+  margin-bottom:2.75rem;
+  align-items:start;
+}
+.book:last-child{margin-bottom:0}
+
+.book img{
+  width:100%;
+  height:auto;
+  display:block;
+  box-shadow:0 1px 2px rgba(22,32,43,.14),0 10px 22px -8px rgba(22,32,43,.3);
+}
+.book a.cover{text-decoration:none}
+
+.book h3{
+  font-family:var(--serif);
+  font-weight:400;
+  font-style:italic;
+  font-size:1.3rem;
+  line-height:1.3;
+  margin:.1rem 0 .35rem;
+}
+
+.imprint{color:var(--ink-soft);margin:0 0 .6rem}
+
+.book-note{
+  font-family:var(--sans);
+  font-size:.8125rem;
+  line-height:1.55;
+  color:var(--ink-soft);
+  margin:0 0 .35rem;
+}
+.honor{color:var(--accent)}
+
+/* ---------- publications ---------- */
+
+ul.pubs{list-style:none;margin:0;padding:0;max-width:42em}
+
+ul.pubs li{
+  padding-left:1.45em;
+  text-indent:-1.45em;
+  margin-bottom:1.05rem;
+}
+ul.pubs li:last-child{margin-bottom:0}
+
+.meta{color:var(--ink-soft)}
+
+/* ---------- abstracts ---------- */
+
+details{text-indent:0;margin-top:.3rem}
+
+summary{
+  font-family:var(--sans);
+  font-size:.78rem;
+  color:var(--ink-soft);
+  cursor:pointer;
+  list-style:none;
+  display:inline-block;
+  padding:.1rem 0;
+}
+summary::-webkit-details-marker{display:none}
+summary::before{
+  content:"+";
+  display:inline-block;
+  width:1.1em;
+  color:var(--accent);
+  font-weight:500;
+}
+details[open] summary::before{content:"\2212"}
+summary:hover{color:var(--accent)}
+summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+
+.abstract{
+  margin:.45rem 0 .3rem;
+  padding-left:1.1em;
+  border-left:1px solid var(--rule);
+  font-size:.9375rem;
+  line-height:1.6;
+  color:var(--ink-soft);
+  max-width:36em;
+}
+
+/* ---------- footer ---------- */
+
+footer{
+  font-family:var(--sans);
+  font-size:.8125rem;
+  color:var(--ink-soft);
+  border-top:1px solid var(--rule);
+  padding-top:1.25rem;
+}
+
+/* ---------- small screens ---------- */
+
+@media (max-width:640px){
+  .page{padding:2.5rem 1.25rem 4rem}
+  .masthead{grid-template-columns:1fr;gap:1.75rem}
+  .portrait{max-width:11rem}
+  .book{grid-template-columns:6.5rem 1fr;gap:1.25rem}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+
+<body>
+<div class="page">
+
+<!-- =====================================================================
+     MASTHEAD
+     Save your headshot as images/headshot.jpg (about 600px wide is plenty).
+     ===================================================================== -->
+
+<header class="masthead">
+  <div class="intro">
+    <h1>Justin Tosi</h1>
+    <p>I&rsquo;m a philosopher teaching ethics at the McDonough School of Business at Georgetown University. I write about social, political, legal, and moral philosophy, and especially the ethics of public discourse, social morality, and special obligations.</p>
+    <p>My work has been published in <i>Philosophy &amp; Public Affairs</i>, <i>Oxford Studies in Political Philosophy</i>, <i>Legal Theory</i>, <i>Pacific Philosophical Quarterly</i>, and other venues.</p>
+  </div>
+  <img class="portrait" src="images/headshot.jpg" alt="Justin Tosi">
+</header>
+
+<!-- =====================================================================
+     CONTACT STRIP
+     The email address is assembled by the script at the bottom of this
+     file so that it never appears in the page source. Edit it there.
+     ===================================================================== -->
+
+<nav class="strip">
+  <a href="https://scholar.google.com/citations?user=r2qB6a4AAAAJ&amp;hl=en">Google Scholar</a>
+  <a href="https://philpeople.org/profiles/justin-tosi">PhilPapers</a>
+  <a id="email" href="#">justintosi at gmail dot com</a>
+</nav>
+
+<!-- =====================================================================
+     BOOKS
+     Save covers as images/myob.png and images/grandstanding.jpg.
+     ===================================================================== -->
+
+<section>
+  <h2>Books</h2>
+
+  <div class="book">
+    <a class="cover" href="https://www.amazon.com/Why-Its-Mind-Your-Business/dp/0367141744/">
+      <img src="images/myob.png" alt="Cover of Why It&rsquo;s OK to Mind Your Own Business">
+    </a>
+    <div>
+      <h3><a href="https://www.amazon.com/Why-Its-Mind-Your-Business/dp/0367141744/">Why It&rsquo;s OK to Mind Your Own Business</a></h3>
+      <p class="imprint">Routledge, 2023. With Brandon Warmke.</p>
+    </div>
+  </div>
+
+  <div class="book">
+    <a class="cover" href="https://www.amazon.com/Grandstanding-Use-Abuse-Moral-Talk/dp/0190900156/">
+      <img src="images/grandstanding.jpg" alt="Cover of Grandstanding: The Use and Abuse of Moral Talk">
+    </a>
+    <div>
+      <h3><a href="https://www.amazon.com/Grandstanding-Use-Abuse-Moral-Talk/dp/0190900156/">Grandstanding: The Use and Abuse of Moral Talk</a></h3>
+      <p class="imprint">Oxford University Press, 2020. With Brandon Warmke.</p>
+      <p class="book-note honor">Winner, Exceptional Scholarship Award, Heterodox Academy, 2020.</p>
+      <p class="book-note">Translated into Portuguese, Korean, Arabic, Chinese, and Persian.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     ARTICLES AND CHAPTERS
+
+     To add an abstract to any entry, paste this just before its </li>:
+
+       <details>
+         <summary>Abstract</summary>
+         <p class="abstract">Text of the abstract goes here.</p>
+       </details>
+
+     Entries without that block simply show no toggle.
+     ===================================================================== -->
+
+<section>
+  <h2>Articles and Chapters</h2>
+  <ul class="pubs">
+
+    <li>&ldquo;Censorship Boosts the Credibility of Bad Ideas.&rdquo; <span class="meta"><i>Oxford Studies in Political Philosophy</i>, forthcoming.</span>
+      <details>
+        <summary>Abstract</summary>
+        <p class="abstract">Defenders of censorship sometimes claim that it is justified as a means of protecting audiences from the influence of bad ideas. This essay argues that censorship is likely to frustrate this aim, even under favorable conditions. The central problem arises from what I call the Endorsement Effect: when a censoring authority permits an idea to be expressed, its inaction functions as an implicit signal that the idea is credible. Where trust in the censor is warranted, this is a rational inference rather than a mere behavioral tendency: the censor screens for bad content, so what it permits is more likely to be good. The trouble is that bad ideas that escape censorship will receive a credibility boost in the eyes of those who trust the censor. Moreover, the more effective the censor is at filtering out genuinely bad content, the stronger this unintended credibility boost becomes. If the aim of censorship is to halt the spread of bad ideas, then this mechanism threatens to undermine that aim. I consider the implications of this challenge for two types of censors. Purist censors seek to avoid any role in promoting bad ideas, but the Endorsement Effect renders this goal impossible in practice. Pragmatist censors aim simply to reduce the overall promotion of bad ideas, but must nevertheless show that censorship is beneficial on net once we consider its unintended consequences. I argue that both types of censor face serious difficulties, and that the Endorsement Effect represents an unnoticed cost that defenders of censorship must address.</p>
+      </details>
+    </li>
+
+    <li>&ldquo;When Universities Censor, What Do They Say?&rdquo; <span class="meta"><i>Georgetown Journal of Law &amp; Public Policy</i>, forthcoming.</span>
+      <details>
+        <summary>Abstract</summary>
+        <p class="abstract">Universities that practice censorship might offer various justifications for doing so. This essay considers three possible justifications and argues that each is undermined by what I call the Endorsement Effect. First, universities might argue that censorship is justified because it protects their community from bad ideas. Second, they might claim that censoring certain expressions is justified because doing so expresses the university community&rsquo;s commitment to its values. Finally, they might argue that censorship is justified as a way of expanding the university&rsquo;s authority over the marketplace of ideas. The Endorsement Effect causes problems for each of these justifications. The idea is that censorship operates as a filtering process: when universities censor some ideas while permitting others, they implicitly signal approval of what is allowed to appear. Those who trust the university&rsquo;s judgment will therefore regard permitted ideas as better in terms of the properties filtered for. Since no censorship regime will catch every objectionable idea, some bad ideas will inevitably escape the filter and receive this boost. All three justifications fail because of what the act of censoring in some cases reveals about the censors&rsquo; judgment in other cases.</p>
+      </details>
+    </li>
+
+    <li>&ldquo;Moral Grandstanding and Cancel Culture,&rdquo; in <i>Reason and Relevance: Philosophy for Today</i>, ed. Steven Hales. <span class="meta">Hackett, forthcoming. With Brandon Warmke.</span>
+      <details>
+        <summary>Abstract</summary>
+        <p class="abstract">Some people defend cancel culture by arguing that the motives behind cancellation don&rsquo;t matter. If we award people social status for calling out wrongdoing, more wrongdoing will be called out, and we all benefit. We argue that although it is sometimes justified that people suffer social consequences for bad behavior, rewarding cancellation campaigns is a bad idea. People who cancel others to look good will go after easy targets rather than deserving ones, and a culture that hands out praise for showy moral enforcement will not deliver the moral progress its defenders promise. In other words: there is nothing inherently wrong with canceling, but cancel culture is a mistake.</p>
+      </details>
+    </li>
+
+    <li>&ldquo;The Business Project: Teaching Business Ethics Through Student Entrepreneurship.&rdquo; <span class="meta"><i>Journal of Business Ethics Education</i>, forthcoming. With Peter Jaworski and Sahar Akhtar.</span>
+      <details>
+        <summary>Abstract</summary>
+        <p class="abstract">Traditional case studies in business ethics ask students to evaluate others&rsquo; decisions with hindsight and moral distance. The Business Project reverses this dynamic by requiring students to build companies they genuinely care about, make public commitments they must defend, and navigate ethical dilemmas emerging from their own choices. Over a semester, student teams pitch businesses grounded in ethical values, critique competitors&rsquo; moral failures, and respond to custom dilemmas that force difficult trade-offs between principles and viability. The assignment integrates entrepreneurial action with ethical reflection, making moral reasoning routine rather than exceptional. By eliminating the comfortable distance of hypothetical scenarios, the project creates learning conditions closer to actual ethical decision-making: competing pressures, personal investment, and skeptical audiences demanding justification. This experiential approach trains students to identify moral problems before they become crises and to integrate ethical principles into strategic planning.</p>
+      </details>
+    </li>
+
+    <li><a href="https://doi.org/10.4324/9781003240785-4">&ldquo;Don&rsquo;t Block the Exits,&rdquo;</a> in <i>New Directions in the Ethics and Politics of Speech</i>, ed. J.P. Messina. <span class="meta">Routledge, 2022, pp. 50&ndash;60. With Brandon Warmke.</span>
+      <details>
+        <summary>Abstract</summary>
+        <p class="abstract">In contemporary political discussions, it is depressingly common to see people criticized for expressing impure beliefs. Moreover, those who sometimes defect from their tribe are criticized for failing to be firmly enough on the side of the angels. We consider explanations for this behavior, including its relationship to moral grandstanding. We will also argue, on both moral and epistemic grounds, in favor of a norm against &ldquo;blocking the exits.&rdquo; We should not use social pressure to discourage people from publicly changing their minds.</p>
+      </details>
+    </li>
+
+    <li><a href="https://doi.org/10.4324/9780367814243-47">&ldquo;Conservative Critiques,&rdquo;</a> in <i>Routledge Companion to Libertarianism</i>, ed. Ben Ferguson and Matt Zwolinski. <span class="meta">Routledge, 2022, pp. 579&ndash;592. With Brandon Warmke.</span>
+      <details>
+        <summary>Abstract</summary>
+        <p class="abstract">American sociologist Robert Nisbet once described conservatives and libertarians as &ldquo;uneasy cousins.&rdquo; The description is apt. While sharing a family resemblance and many of the same political rivals, conservatism and libertarianism are fundamentally at odds. This paper explains why this is so from the conservative perspective. It surveys the starting points and major themes of conservatism and libertarianism. It identifies what conservatives and libertarians agree about. It concludes by showing what conservatives have against libertarianism.</p>
+      </details>
+    </li>
+
+    <li><a href="https://doi.org/10.1016/j.jrp.2021.104187">&ldquo;Moral Grandstanding, Narcissism, and Self-Reported Responses to the COVID-19 Crisis.&rdquo;</a> <span class="meta"><i>Journal of Research in Personality</i> 97, 2022. With Joshua B. Grubbs, A. Shanti James, and Brandon Warmke.</span>
+      <details>
+        <summary>Abstract</summary>
+        <p class="abstract">The present study aimed to understand how status-oriented individual differences such as narcissistic antagonism, narcissistic extraversion, and moral grandstanding motivations may have longitudinally predicted both behavioral and social media responses during the early stages of the COVID-19 pandemic. Via YouGov, a nationally representative sample of U.S. adults was recruited in August of 2019 (N = 2,519; Mage = 47.5, SD = 17.8; 51.4% women) and resampled in May of 2020, (N = 1,533). Results indicated that baseline levels of narcissistic antagonism were associated with lower levels of social distancing and lower compliance with public health recommended behaviors. Similarly, dominance oriented moral grandstanding motivations predicted greater conflict with others over COVID-19, greater engagement in status-oriented social media behaviors about COVID-19, and lower levels of social distancing.</p>
+      </details>
+    </li>
+
+    <li><a href="https://doi.org/10.1016/j.jrp.2020.104009">&ldquo;Moral Grandstanding and Political Polarization: A Multi-Study Consideration.&rdquo;</a> <span class="meta"><i>Journal of Research in Personality</i> 88, 2020, pp. 1&ndash;12. With Joshua B. Grubbs, Brandon Warmke, and A. Shanti James.</span>
+      <details>
+        <summary>Abstract</summary>
+        <p class="abstract">The present work posits that social motives, particularly status seeking in the form of moral grandstanding, are likely at least partially to blame for elevated levels of affective polarization and ideological extremism in the U.S. In Study 1, results from both undergraduates (N = 981; Mean age = 19.4; SD = 2.1; 69.7% women) and a cross-section of U.S. adults matched to 2010 census norms (N = 1,063; Mean age = 48.20, SD = 16.38; 49.8% women) indicated that prestige-motived grandstanding was consistently and robustly related to more extreme ideological views on a variety of issues. In Study 2, results from a weighted, nationally-representative cross-section of U.S. adults (N = 2,519; Mean age = 47.5, SD = 17.8; 51.4% women) found that prestige motivated grandstanding was reliably related to both ideological extremism and affective polarization.</p>
+      </details>
+    </li>
+
+    <li><a href="https://doi.org/10.1017/S0265052521000108">&ldquo;Moral Grandstanding as a Threat to Free Expression.&rdquo;</a> <span class="meta"><i>Social Philosophy &amp; Policy</i> 37:2, 2020, pp. 170&ndash;189. With Brandon Warmke.</span>
+      <details>
+        <summary>Abstract</summary>
+        <p class="abstract">Moral grandstanding, or the use of moral talk for self-promotion, is a threat to free expression. When grandstanding is introduced in a public forum, several ideals of free expression are less likely to be realized. Popular views are less likely to be challenged, people are less free to entertain heterodox ideas, and the cost of changing one&rsquo;s mind goes up.</p>
+      </details>
+    </li>
+
+    <li><a href="https://doi.org/10.1371/journal.pone.0223749">&ldquo;Moral Grandstanding in Public Discourse: Status-Seeking Motives as a Potential Explanatory Mechanism in Predicting Conflict.&rdquo;</a> <span class="meta"><i>PLoS One</i> 14:10, 2019. With Joshua B. Grubbs, Brandon Warmke, A. Shanti James, and W. Keith Campbell.</span>
+      <details>
+        <summary>Abstract</summary>
+        <p class="abstract">Public discourse is often caustic and conflict-filled. This trend seems to be particularly evident when the content of such discourse is around moral issues (broadly defined) and when the discourse occurs on social media. Several explanatory mechanisms for such conflict have been explored in recent psychological and social-science literatures. The present work sought to examine a potentially novel explanatory mechanism defined in philosophical literature: Moral Grandstanding. According to philosophical accounts, Moral Grandstanding is the use of moral talk to seek social status. For the present work, we conducted six studies, using two undergraduate samples (Study 1, N = 361; Study 2, N = 356); a sample matched to U.S. norms for age, gender, race, income, Census region (Study 3, N = 1,063); a YouGov sample matched to U.S. demographic norms (Study 4, N = 2,000); and a brief, one-month longitudinal study of Mechanical Turk workers in the U.S. (Study 5, Baseline N = 499, follow-up n = 296), and a large, one-week YouGov sample matched to U.S. demographic norms (Baseline N = 2,519, follow-up n = 1,776). Across studies, we found initial support for the validity of Moral Grandstanding as a construct. Specifically, moral grandstanding motivation was associated with status-seeking personality traits, as well as greater political and moral conflict in daily life.</p>
+      </details>
+    </li>
+
+    <li><a href="https://doi.org/10.4324/9780429455902-4">&ldquo;Relational Sufficientarianism and Basic Income,&rdquo;</a> in <i>The Future of Work, Technology, and Basic Income</i>, ed. Michael Cholbi and Michael Weber. <span class="meta">Routledge, 2019, pp. 49&ndash;61.</span>
+      <details>
+        <summary>Abstract</summary>
+        <p class="abstract">Basic income policies have recently enjoyed a great deal of discussion, but they are not a natural fit with views of distributive or social justice endorsed by many moral and political philosophers. This essay develops and defends a new view of social justice, called relational sufficientarianism, which is more compatible with a universal basic income. Relational sufficientarianism holds that persons in a just society must have sufficient social status, but not necessarily equal social status. It argues that this view offers a more plausible account of just social relations than relational egalitarianism, a better account of the threshold for sufficiency than distributive sufficientarianism, and can serve as a more suitable theoretical backing for a universal basic income than either of these other views, or distributive egalitarianism.</p>
+      </details>
+    </li>
+
+    <li><a href="https://doi.org/10.1111/papq.12219">&ldquo;Rethinking the Principle of Fair Play.&rdquo;</a> <span class="meta"><i>Pacific Philosophical Quarterly</i> 99:4, 2018, pp. 612&ndash;631.</span>
+      <details>
+        <summary>Abstract</summary>
+        <p class="abstract">The principle of fair play is widely thought to require simply that costs and benefits be distributed fairly. This gloss on the principle, while not entirely inaccurate, has invited a host of popular objections based on misunderstandings about fair play. Central to many of these objections is a failure to treat the principle of fair play as a transactional principle&mdash;one that allocates special obligations and rights among persons as a result of their interactions. I offer an interpretation of the principle of fair play that emphasizes its similarities to another transactional principle: consent. This interpretation reveals that playing fair requires one to reciprocate specifically by following the rules of the cooperative scheme from which one benefits, just as consent requires one to act according to the terms of an agreement. I then draw on the comparison with consent to reply to some popular and persistent objections to the principle.</p>
+      </details>
+    </li>
+
+    <li><a href="https://doi.org/10.1017/S135232521700012X">&ldquo;A Fair Play Account of Legitimate Political Authority.&rdquo;</a> <span class="meta"><i>Legal Theory</i> 23:1, 2017, pp. 55&ndash;67.</span>
+      <details>
+        <summary>Abstract</summary>
+        <p class="abstract">There is an emerging consensus among political philosophers that state legitimacy involves something more than&mdash;or perhaps other than&mdash;political obligation. Yet the principle of fair play, which many take to be a promising basis for political obligation, has been largely absent from discussions of the revised conception of legitimacy. This paper shows how the principle of fair play can generate legitimate political authority by drawing on a neglected feature of the principle&mdash;its stipulation that members of a cooperative scheme must reciprocate specifically by submitting to the scheme&rsquo;s rules.</p>
+      </details>
+    </li>
+
+    <li><a href="https://doi.org/10.1163/17455243-46810054">&ldquo;Playing Fair and Following the Rules.&rdquo;</a> <span class="meta"><i>Journal of Moral Philosophy</i> 14:2, 2017, pp. 134&ndash;141.</span>
+      <details>
+        <summary>Abstract</summary>
+        <p class="abstract">In his paper &ldquo;Fairness, Political Obligation, and the Justificatory Gap&rdquo; (published in the <i>Journal of Moral Philosophy</i>), Jiafeng Zhu argues that the principle of fair play cannot require submission to the rules of a cooperative scheme, and that when such submission is required, the requirement is grounded in consent. I propose a better argument for the claim that fair play requires submission to the rules than the one Zhu considers. I also argue that Zhu&rsquo;s attribution of consent to people commonly thought to be bound to follow the rules by a duty of fair play is implausible.</p>
+      </details>
+    </li>
+
+    <li><a href="https://doi.org/10.1111/rati.12114">&ldquo;The Possibility of a Fair Play Account of Legitimacy.&rdquo;</a> <span class="meta"><i>Ratio</i> 30:1, 2017, pp. 88&ndash;99.</span>
+      <details>
+        <summary>Abstract</summary>
+        <p class="abstract">The philosophical literature on state legitimacy has recently seen a significant conceptual revision. Several philosophers have argued that the state&rsquo;s right to rule is better characterized not as a claim right to obedience, but as a power right. There have been few attempts to show that traditional justifications for the claim right might also be used to justify a power right, and there have been no such attempts involving the principle of fair play, which is widely regarded as the most promising basis for a claim right to obedience. William Edmundson argues that the principle of fair play cannot generate power rights, and so any attempt at a fair play account of legitimacy must fail. I explain how fair play could generate a power right, owing to its stipulation that the rules of a cooperative scheme specify the form of participants&rsquo; repayment.</p>
+      </details>
+    </li>
+
+    <li><a href="https://doi.org/10.1111/papa.12075">&ldquo;Moral Grandstanding.&rdquo;</a> <span class="meta"><i>Philosophy &amp; Public Affairs</i> 44:3, 2016, pp. 197&ndash;217. With Brandon Warmke.</span>
+      <details>
+        <summary>Abstract</summary>
+        <p class="abstract">Moral grandstanding is a pervasive feature of public discourse. Many of us can likely recognize that we have engaged in grandstanding at one time or another. While there is nothing new about the phenomenon of grandstanding, we think that it has not received the philosophical attention it deserves. In this essay, we provide an account of moral grandstanding as the use of public discourse for moral self-promotion. We then show that our account, with support from some standard theses of social psychology, explains the characteristic ways that grandstanding is manifested in public moral discourse. We conclude by arguing that there are good reasons to think that moral grandstanding is typically morally bad and should be avoided.</p>
+      </details>
+    </li>
+
+    <li><a href="https://www.taylorfrancis.com/chapters/edit/10.4324/9781315885933-16/punishment-forgiveness-justin-tosi-brandon-warmke">&ldquo;Punishment and Forgiveness,&rdquo;</a> in <i>Routledge Handbook of Criminal Justice Ethics</i>, ed. Jonathan Jacobs and Jonathan Jackson. <span class="meta">Routledge, 2016, pp. 203&ndash;216. With Brandon Warmke.</span>
+      <details>
+        <summary>Abstract</summary>
+        <p class="abstract">In this paper we explore the relationship between forgiving and punishment. We set out a number of arguments for the claim that if one forgives a wrongdoer, one should not punish her. We then argue that none of these arguments is persuasive. We conclude by reflecting on the possibility of institutional forgiveness in the criminal justice setting and on the differences between forgiveness and acts of mercy.</p>
+      </details>
+    </li>
+
+    <li><a href="https://doi.org/10.7312/cahn16152-006">&ldquo;David Foster Wallace on the Good Life,&rdquo;</a> in <i>Freedom and the Self: Essays on the Philosophy of David Foster Wallace</i>, ed. Steven Cahn and Maureen Eckert. <span class="meta">Columbia University Press, 2015, pp. 133&ndash;168. With Nathan Ballantyne.</span>
+      <details>
+        <summary>Abstract</summary>
+        <p class="abstract">This chapter presents David Foster Wallace&rsquo;s views about three positions regarding the good life&mdash;ironism, hedonism, and narrative theories. Ironism involves distancing oneself from everything one says or does, and putting on Wallace&rsquo;s so-called &ldquo;mask of ennui.&rdquo; Wallace said that the notion appeals to ironists because it insulates them from criticism. However, he reiterated that ironists can be criticized for failing to value anything. Hedonism states that a good life consists in pleasure. Wallace rejected such a notion, doubting that pleasure could play a fundamental role in the good life. Lastly, narrative theories characterize the good life by fidelity to a unified narrative&mdash;a systematic story about one&rsquo;s life, composed of a set of ends or principles according to which one lives. Wallace believed that these theories turn people into spectators, rather than the participants in their own lives.</p>
+      </details>
+    </li>
+
+    <li><a href="https://philpapers.org/rec/GUSATE">&ldquo;Anticipating the Political and Ethical Challenges of Human Nanotechnologies,&rdquo;</a> in <i>Nanoethics: The Ethical and Social Implications of Nanotechnology</i>, ed. Fritz Allhoff, Patrick Lin, James Moor, and John Weckert. <span class="meta">Wiley, 2007, pp. 185&ndash;197. With David Guston and John Parsi.</span></li>
+
+  </ul>
+</section>
+
+<!-- =====================================================================
+     BOOK REVIEWS
+     ===================================================================== -->
+
+<section>
+  <h2>Book Reviews</h2>
+  <ul class="pubs">
+
+    <li><a href="https://ndpr.nd.edu/reviews/the-perfectionist-turn-from-metanorms-to-metaethics/">Review of Douglas J. Den Uyl and Douglas B. Rasmussen, <i>The Perfectionist Turn: From Metanorms to Metaethics</i>.</a> <span class="meta"><i>Notre Dame Philosophical Reviews</i>, October 2017.</span></li>
+
+    <li><a href="https://doi.org/10.1017/s002238160999034x">Review of Matt Matravers, <i>Responsibility and Justice</i>.</a> <span class="meta"><i>Journal of Politics</i> 71:4, 2009, pp. 1600&ndash;1602.</span></li>
+
+  </ul>
+</section>
+
+<footer>
+  <p>&copy; <span id="year">2026</span> Justin Tosi</p>
+</footer>
+
+</div>
+
+<script>
+// ---------------------------------------------------------------------
+// Email address, assembled at load time so it stays out of the source.
+// Change the two lines below to your real address.
+// ---------------------------------------------------------------------
+(function () {
+  var user = "justintosi";
+  var host = "gmail.com";
+  var link = document.getElementById("email");
+  if (link) {
+    link.href = "mailto:" + user + "@" + host;
+    link.textContent = user + "@" + host;
+  }
+  var y = document.getElementById("year");
+  if (y) { y.textContent = new Date().getFullYear(); }
+})();
+</script>
+
+</body>
+</html>
