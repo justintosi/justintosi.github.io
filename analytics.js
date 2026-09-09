@@ -4,8 +4,8 @@
 // create the project. The project number is digits with no quotes; the
 // security code is a string, so keep the quotes.
 
-var sc_project = 0000000;
-var sc_security = "00000000";
+var sc_project = 13354304;
+var sc_security = "c1f9806e";
 var sc_invisible = 1;
 
 (function () {
