@@ -1,24 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600&display=swap");
-
-/* ===================================================================
-   justintosi.com
-
-   Drop-in replacement for style.css. The HTML files need no changes.
-   The @import above loads the typeface, so the existing <link> tags
-   in the page <head> can stay as they are (they now load fonts this
-   sheet doesn't use, which is harmless; moving this import up into
-   those tags later would shave a few milliseconds).
-   =================================================================== */
-
 :root{
-  --paper:#eef0f1;        /* page ground */
-  --band:#e3e6e8;         /* navigation block */
-  --ink:#15181b;          /* headings, links */
-  --ink-mid:#33383d;      /* body prose */
-  --ink-soft:#6c7278;     /* citations, notes, secondary text */
-  --rule:#d9dcdf;         /* hairlines */
-  --accent:#8f2234;       /* used once, on the award line */
-  --sans:"Libre Franklin",system-ui,sans-serif;
+  --paper:#f7f6f2;
+  --ink:#16202b;
+  --ink-soft:#5a6570;
+  --rule:#dcd8ce;
+  --accent:#7c2b2b;
+  --serif:"Newsreader",Georgia,serif;
+  --sans:"IBM Plex Sans",system-ui,sans-serif;
 }
 
 *{box-sizing:border-box}
@@ -27,162 +14,171 @@ body{
   margin:0;
   background:var(--paper);
   color:var(--ink);
-  font-family:var(--sans);
-  font-size:.9375rem;
-  line-height:1.6;
+  font-family:var(--serif);
+  font-size:1.0625rem;
+  line-height:1.65;
   -webkit-font-smoothing:antialiased;
 }
 
 .page{
   max-width:52rem;
   margin:0 auto;
-  padding:3rem 1.75rem 4.5rem;
+  padding:3.5rem 1.75rem 6rem;
 }
 
-a{
-  color:var(--ink);
-  text-decoration:underline;
-  text-decoration-color:#b9bec2;
-  text-decoration-thickness:1px;
-  text-underline-offset:.18em;
-}
-a:hover{text-decoration-color:var(--ink)}
-a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:2px}
+a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--rule);text-decoration-thickness:1px;text-underline-offset:.18em}
+a:hover{color:var(--accent);text-decoration-color:var(--accent)}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
 
 /* ---------- masthead ---------- */
 
 .masthead{
   display:grid;
-  grid-template-columns:1fr 12rem;
-  gap:3rem;
+  grid-template-columns:1fr 14rem;
+  gap:2.75rem;
   align-items:start;
-  margin-bottom:2.75rem;
+  margin-bottom:3.25rem;
 }
 
 h1{
-  font-weight:600;
-  font-size:2.3rem;
-  line-height:1.05;
-  letter-spacing:-.025em;
-  margin:0 0 1.4rem;
+  font-family:var(--serif);
+  font-weight:300;
+  font-size:clamp(2.6rem,7vw,3.9rem);
+  line-height:1;
+  letter-spacing:-0.015em;
+  margin:0 0 1.5rem;
 }
 
-.intro p{margin:0 0 .9rem;max-width:36em;color:var(--ink-mid)}
+.intro p{margin:0 0 1rem;max-width:34em}
 .intro p:last-child{margin-bottom:0}
 
-.portrait{width:100%;height:auto;display:block}
+.portrait{
+  width:100%;
+  height:auto;
+  display:block;
+  filter:saturate(.92);
+}
 
-/* ---------- contact ---------- */
-
-.contact{margin-top:1.75rem;max-width:36em}
+.contact{margin-top:2rem;max-width:34em}
 .contact::before{
   content:"";
   display:block;
   width:3.5rem;
   height:1px;
-  background:#c6cacd;
+  background:var(--rule);
   margin-bottom:1.1rem;
 }
 
 .profile-links{
-  font-size:.8125rem;
+  font-family:var(--sans);
+  font-size:.875rem;
   display:flex;
   flex-wrap:wrap;
   gap:.45rem .55rem;
-  color:var(--ink-soft);
 }
 .profile-links a{text-underline-offset:.2em}
+
+/* Middot between the profile links. Sits in the flex gap, so it disappears
+   automatically if the row ever wraps to one item per line. */
 .profile-links a + a::before{
   content:"\00B7";
-  display:inline-block;
-  color:#aeb3b7;
+  color:var(--rule);
   margin-right:.55rem;
   text-decoration:none;
+  display:inline-block;
 }
 
-/* ---------- navigation ---------- */
+
+.colophon{margin:0}
+
+/* ---------- contact strip ---------- */
 
 .strip{
-  background:var(--band);
+  font-family:var(--sans);
   font-size:.875rem;
-  font-weight:500;
   display:flex;
   flex-wrap:wrap;
-  gap:.45rem 1.75rem;
-  padding:.95rem 1.15rem;
-  margin:0 -1.15rem 3rem;
+  gap:.45rem 1.5rem;
+  padding:1rem 0;
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+  margin-bottom:3.5rem;
 }
-.strip a{color:var(--ink-mid);text-decoration:none}
-.strip a:hover{color:var(--ink);text-decoration:underline;text-decoration-color:var(--ink);text-underline-offset:.2em}
+.strip a{text-underline-offset:.2em}
 
 /* ---------- sections ---------- */
 
-section{margin-bottom:3rem}
+section{margin-bottom:3.5rem}
 
 h2{
-  font-weight:600;
-  font-size:.8125rem;
-  letter-spacing:.02em;
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:1.375rem;
+  letter-spacing:.005em;
   margin:0 0 1.5rem;
-  padding-top:.6rem;
-  border-top:1px solid var(--ink);
+  padding-bottom:.5rem;
+  border-bottom:1px solid var(--rule);
 }
 
 /* ---------- books ---------- */
 
 .book{
   display:grid;
-  grid-template-columns:7rem 1fr;
-  gap:1.75rem;
-  margin-bottom:1.9rem;
+  grid-template-columns:11.5rem 1fr;
+  gap:2.25rem;
+  margin-bottom:2.75rem;
   align-items:start;
 }
 .book:last-child{margin-bottom:0}
 
-.book img{width:100%;height:auto;display:block;border:1px solid var(--rule)}
+.book img{
+  width:100%;
+  height:auto;
+  display:block;
+  box-shadow:0 1px 2px rgba(22,32,43,.14),0 10px 22px -8px rgba(22,32,43,.3);
+}
 .book a.cover{text-decoration:none}
 
 .book h3{
-  font-weight:600;
-  font-size:1rem;
-  line-height:1.35;
-  letter-spacing:-.01em;
-  margin:0 0 .3rem;
+  font-family:var(--serif);
+  font-weight:400;
+  font-style:italic;
+  font-size:1.3rem;
+  line-height:1.3;
+  margin:.1rem 0 .35rem;
 }
 
-.imprint{color:var(--ink-soft);margin:0 0 .45rem;font-size:.875rem}
+.imprint{color:var(--ink-soft);margin:0 0 .6rem}
 
 .book-note{
+  font-family:var(--sans);
   font-size:.8125rem;
-  line-height:1.5;
+  line-height:1.55;
   color:var(--ink-soft);
-  margin:0 0 .25rem;
+  margin:0 0 .35rem;
 }
-
-/* The one place colour appears. Alternatives, if the red doesn't suit:
-   #1b3a6b (deep blue) or #10534c (deep teal). Change --accent above. */
-.honor{color:var(--accent);font-weight:500}
+.honor{color:var(--accent)}
 
 /* ---------- publications ---------- */
 
-ul.pubs{list-style:none;margin:0;padding:0;max-width:40em}
+ul.pubs{list-style:none;margin:0;padding:0;max-width:42em}
 
 ul.pubs li{
-  padding:0 0 1.1rem;
-  margin-bottom:1.1rem;
-  border-bottom:1px solid var(--rule);
+  padding-left:1.45em;
+  text-indent:-1.45em;
+  margin-bottom:1.05rem;
 }
-ul.pubs li:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+ul.pubs li:last-child{margin-bottom:0}
 
-.meta{display:block;color:var(--ink-soft);font-size:.8125rem;margin-top:.25rem}
+.meta{color:var(--ink-soft)}
 
 /* ---------- abstracts ---------- */
 
-details{margin-top:.5rem}
+details{text-indent:0;margin-top:.3rem}
 
 summary{
-  font-size:.75rem;
-  font-weight:500;
+  font-family:var(--sans);
+  font-size:.78rem;
   color:var(--ink-soft);
   cursor:pointer;
   list-style:none;
@@ -190,52 +186,94 @@ summary{
   padding:.1rem 0;
 }
 summary::-webkit-details-marker{display:none}
-summary::before{content:"+";display:inline-block;width:1em;color:var(--ink)}
+summary::before{
+  content:"+";
+  display:inline-block;
+  width:1.1em;
+  color:var(--accent);
+  font-weight:500;
+}
 details[open] summary::before{content:"\2212"}
-summary:hover{color:var(--ink)}
-summary:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:2px}
+summary:hover{color:var(--accent)}
+summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
 
 .abstract{
-  margin:.5rem 0 0;
-  font-size:.875rem;
+  margin:.45rem 0 .3rem;
+  padding-left:1.1em;
+  border-left:1px solid var(--rule);
+  font-size:.9375rem;
   line-height:1.6;
-  color:#4d5257;
+  color:var(--ink-soft);
   max-width:36em;
+}
+
+/* ---------- footer ---------- */
+
+footer{
+  font-family:var(--sans);
+  font-size:.8125rem;
+  color:var(--ink-soft);
+  border-top:1px solid var(--rule);
+  padding-top:1.25rem;
+}
+
+/* ---------- small screens ---------- */
+
+@media (max-width:640px){
+  .page{padding:2.5rem 1.25rem 4rem}
+  .masthead{grid-template-columns:1fr;gap:1.75rem}
+  .portrait{max-width:13rem}
+  .book{grid-template-columns:6.5rem 1fr;gap:1.25rem}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
 }
 
 /* ---------- subpages ---------- */
 
 .backlink{
-  font-size:.8125rem;
-  font-weight:500;
+  font-family:var(--sans);
+  font-size:.875rem;
   display:inline-block;
   margin-bottom:1.5rem;
   text-underline-offset:.2em;
 }
 
-h1.pagetitle{font-size:1.9rem;margin-bottom:2.5rem}
+h1.pagetitle{
+  font-size:clamp(2.1rem,5.5vw,3rem);
+  margin-bottom:2.75rem;
+}
 
-ul.plain{list-style:none;margin:0;padding:0;max-width:40em}
-ul.plain li{margin-bottom:1rem}
+ul.plain{list-style:none;margin:0;padding:0;max-width:42em}
+ul.plain li{margin-bottom:.8rem}
 ul.plain li:last-child{margin-bottom:0}
 
 .note{
+  font-family:var(--sans);
   font-size:.8125rem;
-  line-height:1.5;
+  line-height:1.55;
   color:var(--ink-soft);
-  margin:.25rem 0 0;
+  margin:.2rem 0 0;
+  text-indent:0;
 }
 
 .also{
+  font-family:var(--sans);
   font-size:.8125rem;
-  line-height:1.5;
   color:var(--ink-soft);
-  margin:.35rem 0 0;
+  margin:.3rem 0 0;
+  text-indent:0;
 }
 
-/* ---------- embedded PDF (cv page) ---------- */
+/* ---------- embedded PDF ---------- */
 
-.pdfnote{font-size:.8125rem;color:var(--ink-soft);margin:0 0 1.25rem}
+.pdfnote{
+  font-family:var(--sans);
+  font-size:.875rem;
+  color:var(--ink-soft);
+  margin:0 0 1.25rem;
+}
 .pdfnote a{text-underline-offset:.2em}
 
 .pdfframe{
@@ -247,26 +285,6 @@ ul.plain li:last-child{margin-bottom:0}
   background:#fff;
 }
 
-/* ---------- footer ---------- */
-
-footer{
-  border-top:1px solid var(--rule);
-  padding-top:1.25rem;
-}
-.colophon{margin:0;font-size:.8125rem;color:var(--ink-soft)}
-
-/* ---------- small screens ---------- */
-
 @media (max-width:640px){
-  .page{padding:2rem 1.25rem 3rem}
-  .masthead{grid-template-columns:1fr;gap:1.5rem}
-  .portrait{max-width:11rem}
-  .strip{margin-left:-.75rem;margin-right:-.75rem;padding-left:.75rem;padding-right:.75rem}
-  .book{grid-template-columns:6rem 1fr;gap:1.25rem}
-  h1{font-size:2rem}
   .pdfframe{height:70vh;min-height:24rem}
-}
-
-@media (prefers-reduced-motion:reduce){
-  *{animation:none!important;transition:none!important}
 }
